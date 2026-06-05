@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from '@/components/AppImage'
 
 type FamilyCardProps = {
   image: string

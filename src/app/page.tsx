@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import Image from 'next/image'
+import Image from '@/components/AppImage'
 import Link from 'next/link'
 import Hero from '@/components/Hero'
 import ProgramCard from '@/components/ProgramCard'
