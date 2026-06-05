@@ -1,65 +1,149 @@
-import Image from "next/image";
+import type { Metadata } from 'next'
+import Image from 'next/image'
+import Link from 'next/link'
+import Hero from '@/components/Hero'
+import ProgramCard from '@/components/ProgramCard'
+import TestimonialCard from '@/components/TestimonialCard'
+import WhyOutdoors from '@/components/WhyOutdoors'
+import ContactCTA from '@/components/ContactCTA'
+import { testimonials } from '@/data/testimonials'
+import { galleryPhotos } from '@/data/gallery'
 
-export default function Home() {
+export const metadata: Metadata = {
+  title: 'Aghanaashini — Nature Education Programs Karnataka | Omkar',
+  description:
+    'Immersive biodiversity programs, nature trails, bird walks and ecological learning experiences for schools and families in Karnataka by naturalist Omkar.',
+}
+
+export default function HomePage() {
+  const previewPhotos = galleryPhotos.slice(0, 6)
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <>
+      <Hero
+        image="/images/school/WhatsApp Image 2026-05-20 at 19.16.25.jpeg"
+        headline="Learning Nature Through Experience"
+        subheading="Immersive biodiversity programs, nature trails, bird walks and ecological learning experiences for schools and families."
+        primaryCTA={{ label: 'Book a Program', href: '/contact' }}
+        secondaryCTA={{ label: 'Contact Omkar', href: 'https://wa.me/917676254545' }}
+      />
+
+      {/* About Omkar teaser */}
+      <section className="py-16 px-4 bg-offwhite">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-10 items-center">
+          <div className="relative w-full md:w-72 h-72 rounded-lg overflow-hidden flex-shrink-0">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+              src="/images/family/guided-nature-walks/IMG20260502095810.jpg"
+              alt="Omkar, Naturalist"
+              fill
+              className="object-cover"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          </div>
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-widest text-earth mb-2">
+              About Omkar
+            </p>
+            <h2 className="font-serif text-3xl text-forest mb-4">
+              Naturalist. Educator. Experience Facilitator.
+            </h2>
+            <p className="text-gray-600 leading-relaxed mb-4">
+              Omkar is a naturalist and environmental educator who helps children, families, and
+              communities reconnect with nature through immersive outdoor experiences. His programs
+              combine biodiversity education, ecology awareness, birdwatching, and traditional
+              ecological knowledge into transformative learning journeys.
+            </p>
+            <Link
+              href="/about"
+              className="text-forest font-semibold text-sm border-b-2 border-leaf hover:text-leaf transition-colors"
+            >
+              Learn More →
+            </Link>
+          </div>
         </div>
-      </main>
-    </div>
-  );
+      </section>
+
+      {/* Featured Programs */}
+      <section className="py-16 px-4 bg-parchment-alt">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="font-serif text-3xl md:text-4xl text-forest text-center mb-3">
+            Programs
+          </h2>
+          <p className="text-center text-gray-500 mb-10 max-w-xl mx-auto">
+            Designed for schools, nature clubs, and families who want to learn from the land.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <ProgramCard
+              icon="🏫"
+              title="One-Day Education Tour"
+              description="A full day of nature trails, biodiversity sessions, and journaling for school groups. Ideal for Grades 4–12."
+              duration="1 Day"
+              href="/school-programs"
+              ctaLabel="View Program"
+            />
+            <ProgramCard
+              icon="🌿"
+              title="7-Day Nature Immersion"
+              description="A residential deep-dive into ecology, traditional crafts, bird walks, night trails, and rural living."
+              duration="7 Days"
+              href="/school-programs"
+              ctaLabel="View Program"
+            />
+            <ProgramCard
+              icon="👨‍👩‍👧"
+              title="Family Experiences"
+              description="Guided nature walks, bird watching, forest fruit trails, and nocturnal wildlife night trails for families."
+              duration="Half / Full Day"
+              href="/family"
+              ctaLabel="View Experiences"
+            />
+          </div>
+        </div>
+      </section>
+
+      <WhyOutdoors />
+
+      {/* Gallery preview */}
+      <section className="py-16 px-4 bg-offwhite">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="font-serif text-3xl md:text-4xl text-forest text-center mb-3">
+            From the Field
+          </h2>
+          <p className="text-center text-gray-500 mb-10">
+            A glimpse of life on our programs.
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-8">
+            {previewPhotos.map((photo) => (
+              <div key={photo.src} className="relative aspect-square rounded overflow-hidden">
+                <Image src={photo.src} alt={photo.alt} fill className="object-cover hover:scale-105 transition-transform duration-300" />
+              </div>
+            ))}
+          </div>
+          <div className="text-center">
+            <Link
+              href="/gallery"
+              className="border-2 border-forest text-forest px-6 py-2 rounded text-sm font-semibold hover:bg-forest hover:text-white transition-colors"
+            >
+              View Full Gallery →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-16 px-4 bg-parchment-alt">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="font-serif text-3xl md:text-4xl text-forest text-center mb-10">
+            What People Say
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {testimonials.map((t) => (
+              <TestimonialCard key={t.name} {...t} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <ContactCTA />
+    </>
+  )
 }
