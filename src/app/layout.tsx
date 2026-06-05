@@ -17,9 +17,26 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Aghanaashini — Nature Education Programs by Omkar',
+  title: {
+    default: 'Aghanaashini — Nature Education Programs Karnataka',
+    template: '%s | Aghanaashini',
+  },
   description:
-    'Immersive biodiversity programs, nature trails, bird walks and ecological learning experiences for schools and families in Karnataka.',
+    'Immersive biodiversity programs, nature trails, bird walks and ecological learning experiences for schools and families in Karnataka by naturalist Omkar.',
+  keywords: [
+    'Naturalist Karnataka',
+    'Nature Education Programs',
+    'School Nature Camp',
+    'Biodiversity Education',
+    'Environmental Education',
+    'Bird Watching Tours Karnataka',
+    'Nature Trails Karnataka',
+  ],
+  openGraph: {
+    siteName: 'Aghanaashini',
+    locale: 'en_IN',
+    type: 'website',
+  },
 }
 
 export default function RootLayout({
