@@ -21,7 +21,7 @@ export default function HomePage() {
   return (
     <>
       <Hero
-        image="/images/school/WhatsApp Image 2026-05-20 at 19.16.25.jpeg"
+        image="/images/school/whatsapp-image-2026-05-20-at-19.16.25.jpeg"
         headline="Learning Nature Through Experience"
         subheading="Immersive biodiversity programs, nature trails, bird walks and ecological learning experiences for schools and families."
         primaryCTA={{ label: 'Book a Program', href: '/contact' }}
@@ -33,7 +33,7 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-10 items-center">
           <div className="relative w-full md:w-72 h-72 rounded-lg overflow-hidden flex-shrink-0">
             <Image
-              src="/images/family/guided-nature-walks/IMG20260502095810.jpg"
+              src="/images/family/guided-nature-walks/img20260502095810.jpg"
               alt="Omkar, Naturalist"
               fill
               className="object-cover"

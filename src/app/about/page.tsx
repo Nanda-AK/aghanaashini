@@ -22,7 +22,7 @@ export default function AboutPage() {
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-12 items-start">
           <div className="relative w-full md:w-80 h-96 rounded-lg overflow-hidden flex-shrink-0">
             <Image
-              src="/images/family/guided-nature-walks/WhatsApp Image 2026-05-20 at 19.01.07.jpeg"
+              src="/images/family/guided-nature-walks/whatsapp-image-2026-05-20-at-19.01.07.jpeg"
               alt="Omkar in the field"
               fill
               className="object-cover"

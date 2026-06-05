@@ -32,7 +32,7 @@ export const schoolPrograms: Program[] = [
         ],
       },
     ],
-    image: '/images/school/WhatsApp Image 2026-05-20 at 19.16.02.jpeg',
+    image: '/images/school/whatsapp-image-2026-05-20-at-19.16.02.jpeg',
   },
   {
     id: 'seven-day',
@@ -73,6 +73,6 @@ export const schoolPrograms: Program[] = [
         ],
       },
     ],
-    image: '/images/school/WhatsApp Image 2026-05-20 at 19.16.25.jpeg',
+    image: '/images/school/whatsapp-image-2026-05-20-at-19.16.25.jpeg',
   },
 ]
