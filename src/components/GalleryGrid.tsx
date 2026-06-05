@@ -1,12 +1,21 @@
 'use client'
 
 import Image from 'next/image'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { galleryPhotos, galleryCategories, type GalleryPhoto } from '@/data/gallery'
 
 export default function GalleryGrid() {
   const [activeCategory, setActiveCategory] = useState<string>('all')
   const [lightbox, setLightbox] = useState<GalleryPhoto | null>(null)
+
+  useEffect(() => {
+    if (!lightbox) return
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setLightbox(null)
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [lightbox])
 
   const filtered =
     activeCategory === 'all'
@@ -56,7 +65,7 @@ export default function GalleryGrid() {
         >
           <button
             className="absolute top-4 right-4 text-white text-3xl leading-none"
-            onClick={() => setLightbox(null)}
+            onClick={(e) => { e.stopPropagation(); setLightbox(null) }}
             aria-label="Close"
           >
             ×

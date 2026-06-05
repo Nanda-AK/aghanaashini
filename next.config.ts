@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
   },
   trailingSlash: true,
   basePath: '/aghanaashini',
-  assetPrefix: '/aghanaashini/',
+  assetPrefix: '/aghanaashini',
 }
 
 export default nextConfig
